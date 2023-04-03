@@ -1,9 +1,13 @@
-﻿
+﻿using View;
+using Controller;
+
 namespace ProyectoNET1.model
 {
     //modelos del proyecto
     public class Consumable
     {
+        private int candidad_restock;
+
         public string Name { get; set; }
         public int Price { get; set; }
         public int Quantity_in_stock { get; set; }
@@ -29,5 +33,12 @@ namespace ProyectoNET1.model
             return this.Quantity_in_stock;
 
         }
+
+        public int Re_stock(int candidad_restock)
+        {
+            this.Quantity_in_stock += candidad_restock;
+            return this.Quantity_in_stock;
+        }
+
     }
 }

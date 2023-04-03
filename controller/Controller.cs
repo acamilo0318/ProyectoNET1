@@ -41,6 +41,7 @@ namespace Controller
 
             if (this.Products.Count > last_size && this.Products.Count -1 != null)
             {
+                
                 return true;
             }
             else
