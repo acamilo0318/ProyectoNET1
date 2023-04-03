@@ -103,14 +103,26 @@ namespace View
                         Console.WriteLine($"Ha seleccionado el siguiente producto: {productoSeleccionado.Name}, cantidad en stock {productoSeleccionado.Quantity_in_stock}");
 
                         Console.WriteLine("Cuanto desea surtir?");
+                        while (true)
+                        {
+                            try
+                            {
+                                int candidad_restock = Convert.ToInt32(Console.ReadLine());
+                                productoSeleccionado.Re_stock(candidad_restock);
 
-                        int candidad_restock = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine($"La nueva cantidad en stock del producto es: {productoSeleccionado.Quantity_in_stock} ");
 
-                        productoSeleccionado.Re_stock(candidad_restock);
+                                break;
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Por favor ingrese un valor valido");
+                            }
+                        
+                        }
+                        
 
-                        Console.WriteLine($"La nueva cantidad en stock del producto es: {productoSeleccionado.Quantity_in_stock} ");
-
-
+                        
                     }
                     else if (opcion_proveedor == 2)
                     { 
